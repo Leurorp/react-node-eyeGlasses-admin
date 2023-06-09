@@ -1,18 +1,22 @@
 import React,{useState,useEffect} from "react"
 import "./App.css"
+import logo from "./logo.svg"
 
 function App() {
-  const [message, setData] = useState("")
+  const [data, setData] = useState(null)
 
   useEffect(() => {
-      fetch("http://localhost:8000/message")
+      fetch("/api")
       .then((res) => res.json())
       .then((data) => setData(data.message))
-  }, []);
+  }, [])
 
   return (
     <div className="App">
-      <h1>{message}</h1>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>{!data ? "Loading..." : data}</p>
+      </header>
     </div>
   )
 }
