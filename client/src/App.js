@@ -1,23 +1,33 @@
-import React,{useState,useEffect} from "react"
-import "./App.css"
-import logo from "./logo.svg"
+import React, { useEffect, useState } from "react"
 
-function App() {
-  const [data, setData] = useState(null)
-  
+const App = () => {
+  const [users, setUsers] = useState([])
+
+  const fetchUserData = () => {
+    fetch("/users")
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        setUsers(data)
+      })
+  }
+
   useEffect(() => {
-      fetch("/prova",{method:'GET',header:{'Content-Type':'application/json'}})
-      .then((res) => res.json())
-      .then((data) => setData(data.message))
+    fetchUserData()
   }, [])
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
-      </header>
+    <div>
+      {users.length > 0 && (
+        <ul>
+          {users.map(user => (
+            <li key={user._id}>{user.email}</li>
+          ))}
+        </ul>
+      )}
     </div>
-  )
+  );
 }
-export default App
+
+export default App;
