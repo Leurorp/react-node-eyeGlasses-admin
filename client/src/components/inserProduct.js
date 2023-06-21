@@ -11,11 +11,11 @@ function InsertProducts(){
         try{
          const res=await fetch("/insertProduct",{method:'POST',body: JSON.stringify({nome,gender,materiale,prezzo}),
             headers: { 'Content-Type':'application/json' }})
-         const data=await res.json(); console.log(data)
-         alert('prodotto aggiunto con successo')
-         location.reload()
+         const data=await res.json(); console.log(data)       
         }
-        catch (err) {console.log(err.message)}}
+        catch (err) {console.log(err.message)}
+        alert('prodotto aggiunto con successo')
+        window.location='http://127.0.0.1:3000'}
 
     const insertProduct = () => {
         const w=document.getElementById('myForm').style
