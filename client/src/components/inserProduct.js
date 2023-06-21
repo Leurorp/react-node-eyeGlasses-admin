@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import '../index.css'
 
-function InsertProducts(){
+function InsertProducts() {
     const [nome, setName] = useState("")
     const [gender, setGender] = useState("")    
     const [materiale, setMaterial] = useState("")    
@@ -15,7 +15,7 @@ function InsertProducts(){
         }
         catch (err) {console.log(err.message)}
         alert('prodotto aggiunto con successo')
-        window.location='http://127.0.0.1:3000'}
+        window.location='/'}
 
     const insertProduct = () => {
         const w=document.getElementById('myForm').style

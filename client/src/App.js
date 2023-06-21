@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
-import Navbar from "./components/navbar"
-import InsertProduct from "./components/inserProduct";
+import Navbar from "./components/Navbar"
 
 const App = () => {
   const [users, setUsers] = useState([])
@@ -62,31 +61,7 @@ const App = () => {
           ))}
         </tbody></table>
       )}
-    </div>
-
-    <div className="container-fluid" id="outputProducts" style={{display:"none"}}>
-     <h1 className="text-center">Prodotti inseriti:</h1>
-     <InsertProduct /><hr></hr>
-     {prodocts.length > 0 && (
-      <table className="table table-striped">
-        <thead><tr><td><b>NOME</b></td>
-                   <td><b>GENDER</b></td>
-                   <td><b>MATERIALE</b></td>
-                   <td><b>PREZZO</b></td>
-              </tr>
-        </thead>
-        <tbody>
-          {prodocts.map(prodoct => (
-          <tr key={prodoct._id}>
-            <td>{prodoct.nome}</td>
-            <td>{prodoct.gender}</td>
-            <td>{prodoct.materiale}</td>
-            <td>{prodoct.prezzo} €</td>
-          </tr>
-      ))}
-      </tbody></table>
-     )}
-    </div>
+    </div>   
     
   <div id="outputOrders" style={{display:"none"}}>
   <h1 className="text-center">Ordini:</h1><hr></hr>
