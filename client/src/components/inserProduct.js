@@ -13,15 +13,14 @@ function InsertProducts(){
             headers: { 'Content-Type':'application/json' }})
          const data=await res.json(); console.log(data)
          alert('prodotto aggiunto con successo')
-         window.location = '/store'
+         location.reload()
         }
-        catch (err) {console.log(err.message)}
-    }
+        catch (err) {console.log(err.message)}}
 
     const insertProduct = () => {
         const w=document.getElementById('myForm').style
-        w.display="block"
-        }
+        w.display="block"}
+
 return (<>
     <button style={{margin:"10px", backgroundColor:"silver"}} onClick={insertProduct}>Insert product</button>
     <form onSubmit={handleSubmit}>
