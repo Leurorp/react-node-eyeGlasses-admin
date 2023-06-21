@@ -19,6 +19,7 @@ function Navbar() {
         .then(data2 => {setData(data2)})}
 
     function onProducts() {
+        fetchStoreData()
         const q=document.getElementById('outputUsers')
         const z=document.getElementById('outputProducts')
         const k=document.getElementById('outputOrders')
