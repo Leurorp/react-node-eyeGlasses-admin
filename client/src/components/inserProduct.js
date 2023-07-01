@@ -5,11 +5,12 @@ function InsertProducts() {
     const [nome, setName] = useState("")
     const [gender, setGender] = useState("")    
     const [materiale, setMaterial] = useState("")    
-    const [prezzo, setPrice] = useState("")    
+    const [prezzo, setPrice] = useState("") 
+
     const handleSubmit = async(event) => {         
         event.preventDefault()
         try{
-         const res=await fetch("/insertProduct",{method:'POST',body: JSON.stringify({nome,gender,materiale,prezzo}),
+         const res=await fetch("/insertProduct",{method:'POST',body: JSON.stringify({nome:nome,gender:gender,materiale:materiale,prezzo:prezzo}),
             headers: { 'Content-Type':'application/json' }})
          const data=await res.json(); console.log(data)       
         }

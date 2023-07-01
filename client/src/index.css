@@ -13,3 +13,7 @@ code {
 }
 
 label {margin:5px}
+
+#myFormEdit {
+  left:-2000px; position:fixed; transition:all 0.5s; bottom:600px
+}
